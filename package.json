@@ -2,7 +2,7 @@
   "name": "rsr-calculator",
   "version": "1.0.0",
   "description": "A Calculator function for Risk of Serious Recidivism",
-  "main": "lib/index.js",
+  "main": "./lib",
   "scripts": {
     "test": "./node_modules/grunt-cli/bin/grunt test",
     "watch": "./node_modules/grunt-cli/bin/grunt watch"
