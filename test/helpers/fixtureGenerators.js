@@ -44,7 +44,7 @@ const formatedOffenderRawData = (x) =>
   Object.assign(cloneWithDateObjects(x), { correct_results: createCorrectResultsObject(x) });
 
 const runTestWithData = (calc) => (x) => () => {
-  var result = calc(x);
+  var result = calc(x).riskOfSeriousRecidivism[1];
   result.should.be.withinExpectedTolerance(x, EXPECTEED_TOLERANCE);
 };
 
