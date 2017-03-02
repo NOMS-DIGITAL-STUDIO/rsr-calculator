@@ -51,10 +51,11 @@ describe('Offender Sexual Predictor Score', () => {
       birthDate: new Date(1974, 0, 1),
       mostRecentSexualOffence: new Date(1998, 0, 1),
       sentenceDate: new Date(2017, 0, 1),
+      OGRS4s: 0,
     };
 
-    it('should produce two scores of 0', () => {
-      calc(data).should.eql([0.001133749854539701, 0.0020657476931578095]);
+    it('should produce the correct two scores', () => {
+      calc(data).should.eql([0.00014811127075741918, 0.00027008506324097467]);
     });
   });
 
@@ -68,12 +69,11 @@ describe('Offender Sexual Predictor Score', () => {
       mostRecentSexualOffence: new Date(2017, 0, 1),
       assessmentDate: new Date(2017, 0, 1),
       sentenceDate: new Date(2017, 0, 1),
+      OGRS4s: 0,
     };
 
     it('should produce the correct two scores', () => {
-      calc(data).should.eql([
-        0.003132032644783992,
-        0.005697347108184674]);
+      calc(data).should.eql([0.00014811127075741918, 0.00027008506324097467]);
     });
   });
 
@@ -87,12 +87,11 @@ describe('Offender Sexual Predictor Score', () => {
       mostRecentSexualOffence: new Date(2017, 0, 1),
       assessmentDate: new Date(2017, 0, 1),
       sentenceDate: new Date(2017, 0, 1),
+      OGRS4s: 0,
     };
 
     it('should produce the correct two scores', () => {
-      calc(data).should.eql([
-        0.0018848635402728055,
-        0.003432191950002231]);
+      calc(data).should.eql([0.00014811127075741918, 0.00027008506324097467]);
     });
   });
 
@@ -106,12 +105,11 @@ describe('Offender Sexual Predictor Score', () => {
       mostRecentSexualOffence: new Date(2017, 0, 1),
       assessmentDate: new Date(2017, 0, 1),
       sentenceDate: new Date(2017, 0, 1),
+      OGRS4s: 0,
     };
 
     it('should produce the correct two scores', () => {
-      calc(data).should.eql([
-        0.0005286231953860867,
-        0.000963657229304141]);
+      calc(data).should.eql([0.00014811127075741918, 0.00027008506324097467]);
     });
   });
 });

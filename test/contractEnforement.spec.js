@@ -5,7 +5,7 @@ const fixtureGenerators = require('./helpers/fixtureGenerators');
 const RSRCalc = require('../lib').calculateRisk;
 
 describe("Risk Of Serious Recidivism Calculator", () => {
-  describe("Formatted results set", () => {
+  describe("Contractual results set", () => {
     var data = {
       birthDate:(new Date(1997, 01, 01)),
       sex:1,
@@ -54,16 +54,6 @@ describe("Risk Of Serious Recidivism Calculator", () => {
     it('should include package version number in results', () => {
       result.should.have.property('calculatorVersion');
       result.calculatorVersion.should.equal(pkg.version);
-    });
-
-    it('should include OASys Score in results', () => {
-      result.should.have.property('oasysScore');
-      result.oasysScore.should.be.greaterThan(0);
-    });
-
-    it('should include RSR Score in results', () => {
-      result.should.have.property('riskOfSeriousRecidivismScore');
-      result.riskOfSeriousRecidivismScore.should.be.lessThan(0);
     });
 
     it('should include a probability of Non Sexual Violence in results', () => {
