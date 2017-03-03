@@ -43,9 +43,21 @@ const createCorrectResultsObject = (x) => {
 const formatedOffenderRawData = (x) =>
   Object.assign(cloneWithDateObjects(x), { correct_results: createCorrectResultsObject(x) });
 
+const logResults = (x) =>
+  console.log({
+    OGRS3: x.OGRS3,
+    OGRS4s: x.OGRS4s,
+    probabilityOfNonSexualViolence: x.probabilityOfNonSexualViolence,
+    indecentImageProbability: x.indecentImageProbability,
+    contactSexualProbability: x.contactSexualProbability,
+    riskOfSeriousRecidivism: x.riskOfSeriousRecidivism,
+    calculatorVersion: x.calculatorVersion,
+  })
+
 const runTestWithData = (calc) => (x) => () => {
-  var result = calc(x).riskOfSeriousRecidivism[1];
-  result.should.be.withinExpectedTolerance(x, EXPECTEED_TOLERANCE);
+  var result = calc(x);
+  //logResults(result);
+  result.riskOfSeriousRecidivism[1].should.be.withinExpectedTolerance(x, EXPECTEED_TOLERANCE);
 };
 
 const addTest = (calc) => (i, x) => {
