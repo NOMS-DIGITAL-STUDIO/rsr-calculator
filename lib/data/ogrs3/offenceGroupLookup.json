@@ -1,0 +1,22 @@
+{
+  "Violence": 0,
+  "Robbery": 1,
+  "Public order": 2,
+  "Sexual (not against child)": 3,
+  "Sexual (against child)": 4,
+  "Soliciting or prostitution": 5,
+  "Burglary (domestic)": 6,
+  "Burglary (other)": 7,
+  "Theft (non-motor)": 8,
+  "Handling stolen goods": 9,
+  "Fraud and forgery": 10,
+  "Absconding or bail offences": 11,
+  "Taking & driving away and related offences": 12,
+  "Theft from vehicles": 13,
+  "Drink driving": 14,
+  "Other motoring": 15,
+  "Criminal damage": 16,
+  "Drug import/export/production": 17,
+  "Drug possession/supply": 18,
+  "Other offence": 19
+}
