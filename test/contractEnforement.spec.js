@@ -57,12 +57,12 @@ describe('Risk Of Serious Recidivism Calculator', () => {
 
     it('should include a OGRS3 rating', () => {
       result.should.have.property('OGRS3');
-      result.OGRS3.should.eql([0.1743929456867101, 0.30244865770378115]);
+      result.OGRS3.should.eql([0.17508712705586502, 0.303465211655065]);
     });
 
     it('should include a OGRS3 Percentile Risk', () => {
       result.should.have.property('OGRS3PercentileRisk');
-      result.OGRS3PercentileRisk.should.eql([17.44, 30.24]);
+      result.OGRS3PercentileRisk.should.eql([17.51, 30.35]);
     });
 
     it('should include a OGRS4s rating', () => {
