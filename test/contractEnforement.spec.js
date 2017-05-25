@@ -1,11 +1,10 @@
 const pkg = require('../package.json');
-const should = require('chai').should();
-const fixtureGenerators = require('./helpers/fixtureGenerators');
+require('chai').should();
 
-const RSRCalc = require('../lib').calculateRisk;
+const calculateRisk = require('../lib').calculateRisk;
 
-describe("Risk Of Serious Recidivism Calculator", () => {
-  describe("Contractual results set", () => {
+describe('Risk Of Serious Recidivism Calculator', () => {
+  describe('Contractual results set', () => {
     var data = {
       birthDate:(new Date(1997, 01, 01)),
       sex:0,
@@ -49,7 +48,7 @@ describe("Risk Of Serious Recidivism Calculator", () => {
       assessmentDate:(new Date(2017, 01, 01))
     };
 
-    var result = RSRCalc(data);
+    var result = calculateRisk(data);
 
     it('should include package version number in results', () => {
       result.should.have.property('calculatorVersion');
@@ -58,12 +57,12 @@ describe("Risk Of Serious Recidivism Calculator", () => {
 
     it('should include a OGRS3 rating', () => {
       result.should.have.property('OGRS3');
-      result.OGRS3.should.eql([0.5922584757670805, 0.7488427352487574]);
+      result.OGRS3.should.eql([0.1743929456867101, 0.30244865770378115]);
     });
 
     it('should include a OGRS3 Percentile Risk', () => {
       result.should.have.property('OGRS3PercentileRisk');
-      result.OGRS3PercentileRisk.should.eql([59.23, 74.88]);
+      result.OGRS3PercentileRisk.should.eql([17.44, 30.24]);
     });
 
     it('should include a OGRS4s rating', () => {

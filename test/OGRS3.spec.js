@@ -6,6 +6,9 @@ describe('OGRS3 Calculator', function () {
   describe('With a  criminal history coefficient of 2', function() {
     var coefficients = {
       OGRS3: {
+        Intercept_1: 1.402562384,
+        Intercept_2: 2.121705678,
+
         offenceCategoriesLookup: [
           0,
           -0.5908,
@@ -31,6 +34,7 @@ describe('OGRS3 Calculator', function () {
 
         ageGroupLookup: [
           // male / female
+          [0, 0],
           [-0.0617, -0.9617],// 16 to under 18
           [-0.6251, -0.8994],// 18 to under 21
           [-1.0485, -1.0315],// 21 to under 25
@@ -48,13 +52,13 @@ describe('OGRS3 Calculator', function () {
       },
     };
 
-    it('should calculate the correct result for 1 sanctions', function() {
+    it('should calculate the correct result for 1st sanction', function() {
       var result = calcOGRS3({
         coefficients: coefficients,
 
         sex: 0,                                       // male
-        offenceGroup: 0,                              // violence
-        allSanctions: 0,                              // no previous sanctions
+        currentOffenceType: 0,                        // violence
+        previousSanctions: 0,                         // no previous sanctions
         birthDate: (new Date(1997, 01, 01)),
         convictionDate: (new Date(2017, 01, 01)),
         firstSanctionDate: (new Date(2017, 01, 01)),
@@ -62,28 +66,78 @@ describe('OGRS3 Calculator', function () {
       });
 
       result.should.have.property('OGRS3');
-      result.OGRS3.should.eql([0.12161653992755769,0.22130626481056737]);
-    });
-/*
-    it('should calculate the correct result for 2 sanctions', function() {
-      var result = calcOGRS3({
-        coefficients: coefficients,
-        allSanctions: 2,
-      });
-
-      result.should.equal(6);
+      result.OGRS3.should.eql([0.12161679460086923, 0.2213072433007313]);
     });
 
-    it('should calculate the correct result for 3 sanctions', function() {
+    it('should calculate the correct result for 2nd sanction', function() {
       var result = calcOGRS3({
         coefficients: coefficients,
-        allSanctions: 3,
+
+        sex: 0,                                       // male
+        currentOffenceType: 0,                        // violence
+        previousSanctions: 1,                         // no previous sanctions
+        birthDate: (new Date(1997, 01, 01)),
+        convictionDate: (new Date(2017, 01, 01)),
+        firstSanctionDate: (new Date(2017, 01, 01)),
+        assessmentDate: (new Date(2017, 01, 01)),
       });
 
-      result.should.equal(8);
+      result.should.have.property('OGRS3');
+      result.OGRS3.should.eql([0.3158137408783702, 0.48651969683600205]);
+    });
+
+    it('should calculate the correct result for 3rd sanction', function() {
+      var result = calcOGRS3({
+        coefficients: coefficients,
+
+        sex: 0,                                       // male
+        currentOffenceType: 0,                        // violence
+        previousSanctions: 2,                         // no previous sanctions
+        birthDate: (new Date(1997, 01, 01)),
+        convictionDate: (new Date(2017, 01, 01)),
+        firstSanctionDate: (new Date(2017, 01, 01)),
+        assessmentDate: (new Date(2017, 01, 01)),
+      });
+
+      result.should.have.property('OGRS3');
+      result.OGRS3.should.eql([0.43394042568945157, 0.611435721192055]);
+    });
+
+    it('should calculate the correct result for 4th sanction', function() {
+      var result = calcOGRS3({
+        coefficients: coefficients,
+
+        sex: 0,                                       // male
+        currentOffenceType: 0,                        // violence
+        previousSanctions: 3,                         // no previous sanctions
+        birthDate: (new Date(1997, 01, 01)),
+        convictionDate: (new Date(2017, 01, 01)),
+        firstSanctionDate: (new Date(2017, 01, 01)),
+        assessmentDate: (new Date(2017, 01, 01)),
+      });
+
+      result.should.have.property('OGRS3');
+      result.OGRS3.should.eql([0.5235158190350746, 0.6928071640819993]);
+    });
+
+    it('should calculate the correct result for 5th sanction', function() {
+      var result = calcOGRS3({
+        coefficients: coefficients,
+
+        sex: 0,                                       // male
+        currentOffenceType: 0,                        // violence
+        previousSanctions: 4,                         // no previous sanctions
+        birthDate: (new Date(1997, 01, 01)),
+        convictionDate: (new Date(2017, 01, 01)),
+        firstSanctionDate: (new Date(2017, 01, 01)),
+        assessmentDate: (new Date(2017, 01, 01)),
+      });
+
+      result.should.have.property('OGRS3');
+      result.OGRS3.should.eql([0.5922590514752366, 0.7488438031501189]);
     });
   });
-
+/*
   describe('With a  criminal history coefficient of -0.0182592921752245', function() {
     var coefficients = {
       ogrs3_sanctionoccasions: -0.0182592921752245,
@@ -167,5 +221,5 @@ describe('OGRS3 Calculator', function () {
       result.should.equal(-0.0589983498424184);
     });
     */
-  });
+//  });
 });
