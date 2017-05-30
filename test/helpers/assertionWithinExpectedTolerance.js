@@ -13,15 +13,15 @@ const compare_single_value_with_correct_results = (v, expected, tolerance) => {
      }
    }
    return result;
-}
+};
 
 function assertionWithinExpectedTolerance(expected, precision) {
   this.assert(
-      compare_single_value_with_correct_results(this._obj, expected.correct_results, precision)
-    , "expected #{this} to be comparible to #{exp} but got #{act}"
-    , "expected #{this} to not be comparable to #{act}"
-    , expected.correct_results
-    , this._obj
+    compare_single_value_with_correct_results(this._obj, expected.correct_results, precision),
+    'expected #{this} to be comparible to #{exp} but got #{act}',
+    'expected #{this} to not be comparable to #{act}',
+    expected.correct_results,
+    this._obj
   );
 }
 

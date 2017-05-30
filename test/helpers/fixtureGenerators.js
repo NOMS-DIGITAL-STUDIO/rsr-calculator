@@ -18,7 +18,7 @@ const OUTPUT_TYPE_FIELDS = [
   'output_male_sex',
   'output_non_sex',
   'output_female_sex',
-  'output_rsr_best'
+  'output_rsr_best',
 ];
 
 // fixture generators
@@ -26,11 +26,13 @@ const OUTPUT_TYPE_FIELDS = [
 const parseDate = (input) => {
   var parts = String.prototype.split.call(input || 'sample data', '-');
   return parts.length === 3 ? new Date(parts[0], parts[1]-1, parts[2]) : parts[0];
-}
+};
 
 const cloneWithDateObjects = (x) => {
   var out = {};
-  for (var key in x) out[key] = ~DATE_TYPE_FIELDS.indexOf(key) ? parseDate(x[key]) : x[key];
+  for (var key in x) {
+    out[key] = ~DATE_TYPE_FIELDS.indexOf(key) ? parseDate(x[key]) : x[key];
+  }
   return out;
 };
 
@@ -43,33 +45,21 @@ const createCorrectResultsObject = (x) => {
 const formatedOffenderRawData = (x) =>
   Object.assign(cloneWithDateObjects(x), { correct_results: createCorrectResultsObject(x) });
 
-const logResults = (x) =>
-  console.log({
-    OGRS3: x.OGRS3,
-    OGRS4s: x.OGRS4s,
-    probabilityOfNonSexualViolence: x.probabilityOfNonSexualViolence,
-    indecentImageProbability: x.indecentImageProbability,
-    contactSexualProbability: x.contactSexualProbability,
-    riskOfSeriousRecidivism: x.riskOfSeriousRecidivism,
-    calculatorVersion: x.calculatorVersion,
-  })
-
-const runTestWithData = (calc) => (x) => () => {
+const runTestWithData = (calc, p) => (x) => () => {
   var result = calc(x);
-  //logResults(result);
   result.riskOfSeriousRecidivism[1].should.be.withinExpectedTolerance(x, EXPECTEED_TOLERANCE);
 };
 
-const addTest = (calc) => (i, x) => {
-  var fn = (x['execution'] == true ? it : it.skip);
-  fn("should pass test number " + i + "  <" + x['pncId'] + ">", runTestWithData(calc)(formatedOffenderRawData(x)));
-}
+const addTest = (calc, p) => (i, x) => {
+  var fn = (x.execution === true ? it : it.skip);
+  fn('should pass test number ' + i + '  <' + x.pncId + '>', runTestWithData(calc, p)(formatedOffenderRawData(x)));
+};
 
-const addListOfTests = (calc) => (a) =>
-  a.forEach((x, i) => addTest(calc)(i, x));
+const addListOfTests = (calc, p) => (a) =>
+  a.forEach((x, i) => addTest(calc, p)(i, x));
 
-const addFilteredListOfTests = (calc) => (a, ids) =>
-  ids.forEach((id) => addTest(calc)(id, a[id]));
+const addFilteredListOfTests = (calc, p) => (a, ids) =>
+  ids.forEach((id) => addTest(calc, p)(id, a[id]));
 
 module.exports = {
   runTestWithData: runTestWithData,
