@@ -12,7 +12,7 @@ describe('OGRS3 Calculator', function () {
 
         gender: 0,                                       // male
         currentOffenceType: 0,                        // violence
-        allSanctions: 0,                         // no previous sanctions
+        previousSanctions: 0,                         // no previous sanctions
         birthDate: (new Date(1997, 01, 01)),
         convictionDate: (new Date(2017, 01, 01)),
         firstSanctionDate: (new Date(2017, 01, 01)),
@@ -29,7 +29,7 @@ describe('OGRS3 Calculator', function () {
 
         gender: 0,                                       // male
         currentOffenceType: 0,                        // violence
-        allSanctions: 1,                         // no previous sanctions
+        previousSanctions: 1,                         // no previous sanctions
         birthDate: (new Date(1997, 01, 01)),
         convictionDate: (new Date(2017, 01, 01)),
         firstSanctionDate: (new Date(2017, 01, 01)),
@@ -46,7 +46,7 @@ describe('OGRS3 Calculator', function () {
 
         gender: 0,                                       // male
         currentOffenceType: 0,                        // violence
-        allSanctions: 2,                         // no previous sanctions
+        previousSanctions: 2,                         // no previous sanctions
         birthDate: (new Date(1997, 01, 01)),
         convictionDate: (new Date(2017, 01, 01)),
         firstSanctionDate: (new Date(2017, 01, 01)),
@@ -63,7 +63,7 @@ describe('OGRS3 Calculator', function () {
 
         gender: 0,                                       // male
         currentOffenceType: 0,                        // violence
-        allSanctions: 3,                         // no previous sanctions
+        previousSanctions: 3,                         // no previous sanctions
         birthDate: (new Date(1997, 01, 01)),
         convictionDate: (new Date(2017, 01, 01)),
         firstSanctionDate: (new Date(2017, 01, 01)),
@@ -80,7 +80,7 @@ describe('OGRS3 Calculator', function () {
 
         gender: 0,                                       // male
         currentOffenceType: 0,                        // violence
-        allSanctions: 4,                         // no previous sanctions
+        previousSanctions: 4,                         // no previous sanctions
         birthDate: (new Date(1997, 01, 01)),
         convictionDate: (new Date(2017, 01, 01)),
         firstSanctionDate: (new Date(2017, 01, 01)),

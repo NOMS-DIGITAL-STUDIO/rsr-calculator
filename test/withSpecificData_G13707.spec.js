@@ -17,7 +17,7 @@ describe("Risk Of Serious Recidivism Calculator", () => {
       strangerVictim: null,
       violentOffenceCategory: null,
       firstSanctionDate: (new Date(1000076400000)),
-      allSanctions: 25,
+      previousSanctions: 25,
       violentSanctions: 6,
       sexualOffenceHistory: 1, // This should be 1 = FALSE
       mostRecentSexualOffence: (new String("sample data")),

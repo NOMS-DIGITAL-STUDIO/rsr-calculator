@@ -16,7 +16,7 @@ describe('Risk Of Serious Recidivism Calculator', () => {
       strangerVictim:1,
       violentOffenceCategory:'',
       firstSanctionDate:(new Date(2017, 01, 01)),
-      allSanctions:4,
+      previousSanctions:4,
       violentSanctions:2,
       sexualOffenceHistory:0,
       mostRecentSexualOffence:(new Date(2017, 01, 01)),

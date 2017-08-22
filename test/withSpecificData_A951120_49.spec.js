@@ -17,7 +17,7 @@ describe("Risk Of Serious Recidivism Calculator", () => {
       strangerVictim: null,
       violentOffenceCategory: null,
       firstSanctionDate: (new Date(434674800000)),
-      allSanctions: 6,
+      previousSanctions: 6,
       violentSanctions: 2,
       sexualOffenceHistory: 0, //This should be zero => YES (THIS IS TRUE in spreadsheet)
       mostRecentSexualOffence: (new Date(603504000000)),
