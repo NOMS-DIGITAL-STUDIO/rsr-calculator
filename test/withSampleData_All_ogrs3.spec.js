@@ -29,7 +29,7 @@ const cloneWithDateObjects = (x) => {
 const runTestWithData = (calc, p, v) => (x) => () => {
   var result = calc(x);
   //logResults(result);
-  result[p][0].should.be.equal(x[v]);
+  result[p].result[0].should.be.equal(x[v]);
 };
 
 const addTest = (calc, p, v) => (i, x) => {
