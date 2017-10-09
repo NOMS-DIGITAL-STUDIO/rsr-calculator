@@ -20,7 +20,7 @@ function assertionWithinExpectedTolerance(expected, precision) {
     compare_single_value_with_correct_results(this._obj, expected.correct_results, precision),
     'expected #{this} to be comparible to #{exp} but got #{act}',
     'expected #{this} to not be comparable to #{act}',
-    expected.correct_results,
+    expected.correct_results.output_sv_static,
     this._obj
   );
 }

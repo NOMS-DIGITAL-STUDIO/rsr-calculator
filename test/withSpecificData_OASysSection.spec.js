@@ -50,7 +50,7 @@ describe("Risk Of Serious Recidivism Calculator", () => {
       robbery: 1,
       burglary: 1,
       anyOtherOffence: 0,
-      endagerLife: 1,
+      endangerLife: 1,
       arson: 1,
       correct_results: { output_sv_dynamic: 0.08156458710669154 }
     }));

@@ -1,7 +1,7 @@
 const should = require('chai').should();
 require('./assertionWithinExpectedTolerance');
 
-const EXPECTEED_TOLERANCE = 8;
+const EXPECTED_TOLERANCE = 8;   // decimal precision
 
 const DATE_TYPE_FIELDS = [
   'birthDate',
@@ -47,7 +47,7 @@ const formatedOffenderRawData = (x) =>
 
 const runTestWithData = (calc, p) => (x) => () => {
   var result = calc(x);
-  result.riskOfSeriousRecidivism[1].should.be.withinExpectedTolerance(x, EXPECTEED_TOLERANCE);
+  result.riskOfSeriousRecidivism[1].should.be.withinExpectedTolerance(x, EXPECTED_TOLERANCE);
 };
 
 const addTest = (calc, p) => (i, x) => {

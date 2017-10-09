@@ -29,7 +29,7 @@ describe("Risk Of Serious Recidivism Calculator", () => {
       wounding: 0,
       burglary: 1,
       arson: 1,
-      endagerLife: 1,
+      endangerLife: 1,
       kidnapping: 1,
       firearmPossession: 1,
       robbery: 1,
