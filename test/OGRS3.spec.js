@@ -98,7 +98,7 @@ describe('OGRS3 Calculator', function () {
 
       result.should.have.property('OGRS3');
       result.OGRS3.should.have.property('result');
-      result.OGRS3.result.should.eql([0.5922581047904114, 0.7488430658491833]);
+      result.OGRS3.result.should.eql([0.5922581047904115, 0.7488430658491833]);
     });
 
     it('should calculate the same result as the existing tool', function() {

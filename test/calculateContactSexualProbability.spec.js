@@ -55,7 +55,7 @@ describe('Offender Sexual Predictor Score', () => {
     };
 
     it('should produce the correct two scores', () => {
-      calc(data).should.eql([0.00014811127075741918, 0.00027008506324097467]);
+      calc(data).should.eql([0.00014811127075741928, 0.0002700850632409747]);
     });
   });
 
@@ -73,7 +73,7 @@ describe('Offender Sexual Predictor Score', () => {
     };
 
     it('should produce the correct two scores', () => {
-      calc(data).should.eql([0.00014811127075741918, 0.00027008506324097467]);
+      calc(data).should.eql([0.00014811127075741928, 0.0002700850632409747]);
     });
   });
 
@@ -91,7 +91,7 @@ describe('Offender Sexual Predictor Score', () => {
     };
 
     it('should produce the correct two scores', () => {
-      calc(data).should.eql([0.00014811127075741918, 0.00027008506324097467]);
+      calc(data).should.eql([0.00014811127075741928, 0.0002700850632409747]);
     });
   });
 
@@ -109,7 +109,7 @@ describe('Offender Sexual Predictor Score', () => {
     };
 
     it('should produce the correct two scores', () => {
-      calc(data).should.eql([0.00014811127075741918, 0.00027008506324097467]);
+      calc(data).should.eql([0.00014811127075741928, 0.0002700850632409747]);
     });
   });
 });

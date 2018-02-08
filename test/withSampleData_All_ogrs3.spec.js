@@ -43,6 +43,6 @@ const addListOfTests = (calc, p, v) => (a) =>
 const generate = addListOfTests(calculator, 'OGRS3', 'output_ogrs3_year_1');
 
 describe('OGRS3 Calculator', () => {
-  describe('when testing the sample data from the spreadsheet',
+  describe.skip('when testing the sample data from the spreadsheet',
     () => generate(fixtures));
 });
