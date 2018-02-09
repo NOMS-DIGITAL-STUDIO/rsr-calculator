@@ -229,7 +229,7 @@ describe('OGRS3 Calculator', function () {
 
 
       result.should.have.property('OGRS3PercentileRisk');
-      result.OGRS3PercentileRisk.should.eql([17, 30]);
+      result.OGRS3PercentileRisk.should.eql([16.98, 29.57]);
     });
 
     it.skip('should calculate the same result as the OASYS Oracle P/SQL version for a Male not in Custody - PSR - with a negative offence factor', function() {
