@@ -27,8 +27,8 @@ dummyData.forEach((rawData) => {
   var offenderData = cloneWithDateObjects(rawData);
   var result = RSRCalc.calculateRisk(offenderData);
 
-  var beta14 = result.RSRPercentileRiskBeta14;
-  var beta18 = result.RSRPercentileRisk;
+  var beta14 = result.riskOfSeriousRecidivismBeta14;
+  var beta18 = result.riskOfSeriousRecidivism;
 
   if (beta14[0] !== beta18[0] || beta14[1] !== beta18[1]) {
     console.log('==========');
