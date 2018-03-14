@@ -1,6 +1,6 @@
 {
   "name": "rsr-calculator",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "A Calculator function for Risk of Serious Recidivism",
   "main": "./lib",
   "scripts": {
