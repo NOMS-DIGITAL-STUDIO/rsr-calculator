@@ -23,23 +23,29 @@ const cloneWithDateObjects = (x) => {
   return out;
 };
 
+let total = 0;
+
 dummyData.forEach((rawData) => {
   var offenderData = cloneWithDateObjects(rawData);
   var result = RSRCalc.calculateRisk(offenderData);
 
-  var beta14 = result.riskOfSeriousRecidivismBeta14;
-  var beta18 = result.riskOfSeriousRecidivism;
+  var beta18 = result.riskOfSeriousRecidivismBeta18;
+  var betaNodeJS = result.riskOfSeriousRecidivismNodeJS;
 
-  if (beta14[0] !== beta18[0] || beta14[1] !== beta18[1]) {
+  if (betaNodeJS[0] !== beta18[0] || betaNodeJS[1] !== beta18[1]) {
+    console.log('Scores');
+    console.log(beta18)
+    console.log(betaNodeJS);
+    console.log('Percentiles');
+    console.log(result.RSRPercentileRiskBeta18)
+    console.log(result.RSRPercentileRiskNodeJS);
+    console.log('Risk Bands');
+    console.log(result.RSRRiskBandBeta18)
+    console.log(result.RSRRiskBandNodeJS);
     console.log('==========');
-    //console.log('OFFENDER DATA');
-    //console.log(RSRCalc.printOffenderData(offenderData));
-
-    console.log('**********');
-    console.log('RESULT');
-    console.log(beta14, beta18);
-    console.log(result.RSRPercentileRiskBeta14, result.RSRPercentileRisk);
-    console.log(result.RSRRiskBandBeta14, result.RSRRiskBand);
-    console.log('==========');
+  } else {
+    total += 1;
   }
 });
+
+console.log(`Number of scores that are equal ${total}`);
