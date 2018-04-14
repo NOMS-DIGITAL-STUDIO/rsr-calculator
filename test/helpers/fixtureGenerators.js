@@ -47,6 +47,8 @@ const formatedOffenderRawData = (x) =>
 
 const runTestWithData = (calc, p) => (x) => () => {
   var result = calc(x);
+  should.not.exist(result.errors);
+  result.should.have.property('riskOfSeriousRecidivism');
   result.riskOfSeriousRecidivism[1].should.be.withinExpectedTolerance(x, EXPECTEED_TOLERANCE);
 };
 

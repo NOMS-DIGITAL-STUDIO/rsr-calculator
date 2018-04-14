@@ -231,7 +231,7 @@ describe('OGRS3 Calculator', function () {
       result.should.have.property('OGRS3PercentileRisk');
       result.OGRS3PercentileRisk.should.eql([16.98, 29.57]);
     });
-
+/*
     it.skip('should calculate the same result as the OASYS Oracle P/SQL version for a Male not in Custody - PSR - with a negative offence factor', function() {
       var result = calcOGRS3({
         coefficients: coefficients,
@@ -267,7 +267,7 @@ describe('OGRS3 Calculator', function () {
       result.should.have.property('OGRS3PercentileRisk');
       result.OGRS3PercentileRisk.should.eql([28, 45]);
     });
-
+*/
     it('should calculate the same result as Oracle SQL', function() {
       let b1 = 1.251124464 * ln((5 + 1) / (10 + 37 - 14));
       let b2 = 0.463062792;

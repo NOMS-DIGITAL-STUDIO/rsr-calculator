@@ -1,9 +1,7 @@
 const pkg = require('../package.json');
-require('chai').should();
+const should = require('chai').should();
 
 const calculateRisk = require('../lib').calculateRisk;
-
-
 
 describe('Risk Of Serious Recidivism Calculator', () => {
   describe('Contractual results set', () => {
@@ -161,4 +159,5 @@ describe('Risk Of Serious Recidivism Calculator', () => {
       result.RSRRiskBand.length.should.equal(2);
     });
   });
+
 });

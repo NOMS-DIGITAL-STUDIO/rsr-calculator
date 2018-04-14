@@ -4,8 +4,8 @@ const RSRCalc = require('../lib').calculateRisk;
 
 const runTestWithData = fixtureGenerators.runTestWithData(RSRCalc);
 
-describe("Risk Of Serious Recidivism Calculator", () => {
-  describe("With a specific Data Set", () => {
+describe('Risk Of Serious Recidivism Calculator', () => {
+  describe('With a specific Data Set', () => {
     it('should pass for pncId : G13707 ', runTestWithData({
       birthDate: (new Date(609202800000)),
       sex: 0,
@@ -20,7 +20,7 @@ describe("Risk Of Serious Recidivism Calculator", () => {
       previousSanctions: 25,
       violentSanctions: 6,
       sexualOffenceHistory: 1, // This should be 1 = FALSE
-      mostRecentSexualOffence: (new String("sample data")),
+      mostRecentSexualOffence: new String('sample data'),
       contactAdult: 0,
       contactChild: 0,
       indecentImage: 0,

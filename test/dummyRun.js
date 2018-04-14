@@ -1,5 +1,5 @@
 const RSRCalc = require('../lib');
-const dummyData = require('./data/data.json');
+const dummyData = require('./data/query_data.json');
 
 const DATE_TYPE_FIELDS = [
   'birthDate',
@@ -24,6 +24,8 @@ const cloneWithDateObjects = (x) => {
 };
 
 let total = 0;
+let totalWithErrors = 0;
+let totalWithDiff = 0;
 
 dummyData.forEach((rawData) => {
   var offenderData = cloneWithDateObjects(rawData);
@@ -32,20 +34,27 @@ dummyData.forEach((rawData) => {
   var beta18 = result.riskOfSeriousRecidivismBeta18;
   var betaNodeJS = result.riskOfSeriousRecidivismNodeJS;
 
-  if (betaNodeJS[0] !== beta18[0] || betaNodeJS[1] !== beta18[1]) {
-    console.log('Scores');
-    console.log(beta18)
-    console.log(betaNodeJS);
-    console.log('Percentiles');
-    console.log(result.RSRPercentileRiskBeta18)
-    console.log(result.RSRPercentileRiskNodeJS);
-    console.log('Risk Bands');
-    console.log(result.RSRRiskBandBeta18)
-    console.log(result.RSRRiskBandNodeJS);
+  total += 1;
+
+  if (result.errors) {
+    totalWithErrors += 1;
+
+    console.log(offenderData.testNumber, 'Error', result.errors);
     console.log('==========');
   } else {
-    total += 1;
+    if (betaNodeJS[0] !== beta18[0] || betaNodeJS[1] !== beta18[1]) {
+      totalWithDiff += 1;
+
+      console.log(offenderData.testNumber, 'Scores', beta18, betaNodeJS);
+      console.log(offenderData.testNumber, 'Percentiles', result.RSRPercentileRiskBeta18, result.RSRPercentileRiskNodeJS);
+      console.log(offenderData.testNumber, 'Risk Bands', result.RSRRiskBandBeta18, result.RSRRiskBandNodeJS);
+      console.log('==========');
+    }
   }
+
 });
 
-console.log(`Number of scores that are equal ${total}`);
+console.log(`Total Number of scores ${total}`);
+console.log(`- Correct ${total - totalWithDiff - totalWithErrors}`);
+console.log(`- Different ${totalWithDiff}`);
+console.log(`- Errors ${totalWithErrors}`);

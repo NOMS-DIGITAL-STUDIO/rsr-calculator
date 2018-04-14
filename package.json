@@ -1,6 +1,6 @@
 {
   "name": "rsr-calculator",
-  "version": "1.0.14",
+  "version": "1.0.15",
   "description": "A Calculator function for Risk of Serious Recidivism",
   "main": "./lib",
   "scripts": {
@@ -11,9 +11,10 @@
   "license": "MIT",
   "devDependencies": {
     "chai": "*",
+    "csvtojson": "^1.1.9",
     "glob": "*",
-    "grunt-cli": "*",
     "grunt": "*",
+    "grunt-cli": "*",
     "grunt-contrib-watch": "*",
     "grunt-mocha-test": "*",
     "load-grunt-tasks": "*",
