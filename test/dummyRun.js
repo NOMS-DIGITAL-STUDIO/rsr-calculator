@@ -45,6 +45,27 @@ dummyData.forEach((rawData) => {
     if (betaNodeJS[0] !== beta18[0] || betaNodeJS[1] !== beta18[1]) {
       totalWithDiff += 1;
 
+      console.log({
+        rsrBeta18: result.rsrBeta18,
+        rsrNodeJS: {
+          //agePolynominal: ,
+          //OGRS4OffenceCategoryPolynominal: ,
+          //VATPolynominal: ,
+          //OGRS3SanctionsPolynominal: ,
+          //sanctionsPolynominal: ,
+          OGRS4s: result.OGRS4s,
+          //OGRS4g: ,
+          //offenceFreeMonths: ,
+          //violentSanctionsPolynominal: ,
+          OGRS4v: result.OGRS4v,
+          //OASysScore: ,
+          nonSexualViolenceProbability: result.probabilityOfNonSexualViolence,
+          indecentImageProbability: result.indecentImageProbability,
+          contactSexualProbability: result.contactSexualProbability,
+          totalRSR: result.riskOfSeriousRecidivismNodeJS
+        }
+      });
+
       console.log(offenderData.testNumber, 'Scores', beta18, betaNodeJS);
       console.log(offenderData.testNumber, 'Percentiles', result.RSRPercentileRiskBeta18, result.RSRPercentileRiskNodeJS);
       console.log(offenderData.testNumber, 'Risk Bands', result.RSRRiskBandBeta18, result.RSRRiskBandNodeJS);
