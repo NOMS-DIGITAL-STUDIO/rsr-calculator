@@ -2,7 +2,7 @@ const pkg = require('../package.json');
 const should = require('chai').should();
 const fixtureGenerators = require('./helpers/fixtureGenerators');
 
-const calc = require('../lib/calculateContactSexualProbability');
+const calc = require('../lib/calculateOffenderSexualProbability');
 
 describe('Offender Sexual Predictor Score', () => {
   describe('when required data is not present', () => {
