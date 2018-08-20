@@ -77,7 +77,7 @@ describe('Risk Of Serious Recidivism Calculator', () => {
     var result = calculateRisk(data);
 
     it('should include correct RSR Percentile Risk', () => {
-      result.RSRPercentileRisk.should.eql([ 3.6900000000000004, 6.5600000000000005 ]);
+      result.RSRPercentileRisk.should.eql([ 3.69, 6.56 ]);
     });
   });
 });
