@@ -105,22 +105,6 @@ describe('Risk Of Serious Recidivism Calculator', () => {
       result.calculatorVersion.should.equal(pkg.version);
     });
 
-    it('should include a OGRS3 rating', () => {
-      result.should.have.property('OGRS3');
-      result.OGRS3.should.have.property('result');
-      result.OGRS3.result.length.should.equal(2);
-    });
-
-    it('should include a OGRS3 explaination object', () => {
-      result.should.have.property('OGRS3');
-      result.OGRS3.should.have.property('explain');
-    });
-
-    it('should include a OGRS3 Percentile Risk', () => {
-      result.should.have.property('OGRS3PercentileRisk');
-      result.OGRS3PercentileRisk.length.should.equal(2);
-    });
-
     it('should include a probability of Non Sexual Violence in results', () => {
       result.should.have.property('probabilityOfNonSexualViolence');
       result.probabilityOfNonSexualViolence.length.should.equal(2);
@@ -132,8 +116,8 @@ describe('Risk Of Serious Recidivism Calculator', () => {
     });
 
     it('should include an Offender Sexual Probability (OSP) in results', () => {
-      result.should.have.property('offenderSexualProbability');
-      result.offenderSexualProbability.length.should.equal(2);
+      result.should.have.property('OSPScore');
+      result.OSPScore.length.should.equal(2);
     });
 
     it('should include a OSP Risk Band', () => {
