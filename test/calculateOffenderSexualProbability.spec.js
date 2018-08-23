@@ -29,7 +29,7 @@ describe('Offender Sexual Predictor Score', () => {
 
   describe('when only data is that there is no current or previous sexual element', () => {
     var data = {
-      hasSexualElementOrOffence: false,
+      hasSexualHistory: false,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
@@ -56,7 +56,7 @@ describe('Offender Sexual Predictor Score', () => {
     var data = {
       isFemale: true,
       isMale: false,
-      hasSexualElementOrOffence: true,
+      hasSexualHistory: true,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
@@ -70,10 +70,10 @@ describe('Offender Sexual Predictor Score', () => {
     var data = {
       isFemale: false,
       isMale: true,
-      hasSexualElementOrOffence: true,
+      hasSexualHistory: true,
 
-      ageAtSentenceDate: 44,
-      ageAtMostRecentSexualOffence: 24,
+      ageAtRiskDate: 44,
+      ageAtMostRecentSexOffence: 24,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
@@ -87,10 +87,10 @@ describe('Offender Sexual Predictor Score', () => {
     var data = {
       isFemale: false,
       isMale: true,
-      hasSexualElementOrOffence: true,
+      hasSexualHistory: true,
 
-      ageAtSentenceDate: 20,
-      ageAtMostRecentSexualOffence: 20,
+      ageAtRiskDate: 20,
+      ageAtMostRecentSexOffence: 20,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
@@ -104,10 +104,10 @@ describe('Offender Sexual Predictor Score', () => {
     var data = {
       isFemale: false,
       isMale: true,
-      hasSexualElementOrOffence: true,
+      hasSexualHistory: true,
 
-      ageAtSentenceDate: 30,
-      ageAtMostRecentSexualOffence: 30,
+      ageAtRiskDate: 30,
+      ageAtMostRecentSexOffence: 30,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
@@ -121,10 +121,10 @@ describe('Offender Sexual Predictor Score', () => {
     var data = {
       isFemale: false,
       isMale: true,
-      hasSexualElementOrOffence: true,
+      hasSexualHistory: true,
 
-      ageAtSentenceDate: 60,
-      ageAtMostRecentSexualOffence: 60,
+      ageAtRiskDate: 60,
+      ageAtMostRecentSexOffence: 60,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
