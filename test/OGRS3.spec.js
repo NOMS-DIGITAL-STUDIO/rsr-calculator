@@ -132,7 +132,7 @@ describe('OGRS3 Calculator', function () {
       result.OGRS3.should.have.property('explain');
 
       result.OGRS3.explain.currentOffenceFactor.should.equal(b4);
-      result.OGRS3.explain.agePolynominalFactor.should.equal(b3);
+      result.OGRS3.explain.ageFactor.should.equal(b3);
       result.OGRS3.explain.numberOfSanctionsFactor.should.equal(b2);
       result.OGRS3.explain.copasRate.should.equal(b1);
 
@@ -169,7 +169,7 @@ describe('OGRS3 Calculator', function () {
       result.OGRS3.should.have.property('explain');
 
       result.OGRS3.explain.currentOffenceFactor.should.equal(b4);
-      result.OGRS3.explain.agePolynominalFactor.should.equal(b3);
+      result.OGRS3.explain.ageFactor.should.equal(b3);
       result.OGRS3.explain.numberOfSanctionsFactor.should.equal(b2);
       result.OGRS3.explain.copasRate.should.equal(b1);
 
@@ -207,7 +207,7 @@ describe('OGRS3 Calculator', function () {
       result.OGRS3.should.have.property('explain');
 
       (result.OGRS3.explain.currentOffenceFactor.toFixed(4) * 1).should.equal(b4);
-      (result.OGRS3.explain.agePolynominalFactor.toFixed(4) * 1).should.equal(b3);
+      (result.OGRS3.explain.ageFactor.toFixed(4) * 1).should.equal(b3);
       (result.OGRS3.explain.numberOfSanctionsFactor.toFixed(5) * 1).should.equal(b2);
       (result.OGRS3.explain.copasRate.toFixed(3) * 1).should.equal(b1.toFixed(3) * 1);
 
