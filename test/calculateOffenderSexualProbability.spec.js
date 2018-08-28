@@ -73,7 +73,7 @@ describe('Offender Sexual Predictor Score', () => {
       hasSexualHistory: true,
 
       ageAtRiskDate: 44,
-      ageAtMostRecentSexOffence: 24,
+      ageAtMostRecentSexualOffence: 24,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
@@ -90,7 +90,7 @@ describe('Offender Sexual Predictor Score', () => {
       hasSexualHistory: true,
 
       ageAtRiskDate: 20,
-      ageAtMostRecentSexOffence: 20,
+      ageAtMostRecentSexualOffence: 20,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
@@ -107,7 +107,7 @@ describe('Offender Sexual Predictor Score', () => {
       hasSexualHistory: true,
 
       ageAtRiskDate: 30,
-      ageAtMostRecentSexOffence: 30,
+      ageAtMostRecentSexualOffence: 30,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
@@ -124,7 +124,7 @@ describe('Offender Sexual Predictor Score', () => {
       hasSexualHistory: true,
 
       ageAtRiskDate: 60,
-      ageAtMostRecentSexOffence: 60,
+      ageAtMostRecentSexualOffence: 60,
     };
 
     data.OSPStaticScore = calcStaticScore(data);
